@@ -5,6 +5,10 @@ app = Flask(__name__)
 def show_user_profile():
 	return render_template('user.html')
 
+@app.route('/back')
+def logout():
+	return redirect('/')
+
 @app.route('/show', methods=['POST'])
 def show():
 	username = request.form['username']
